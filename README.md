@@ -29,3 +29,12 @@ should produce the following two lines (this is a markdown file, the tripple-quo
 Hello
 world
 ```
+
+# Solution
+implemeted on Python 3.10.6
+- Run engine.py to test it on the sample input
+- test.py file for two sample tests. More tests can be manually added to test furthermore.
+
+
+
+

@@ -21,8 +21,7 @@ TEST_INPUTS = [
 
 def test_text_editor_engine():
   for test_unit in TEST_INPUTS:
-    output = str(process_input_text(test_unit["input"]))
-    assert output == test_unit["expected_output"], "Doesn't match the expected output"
+    assert str(process_input_text(test_unit["input"])) == test_unit["expected_output"], "Doesn't match the expected output"
   print("All tests passed")
 
 test_text_editor_engine()

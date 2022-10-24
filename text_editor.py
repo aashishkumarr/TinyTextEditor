@@ -1,6 +1,16 @@
 from util import add_element_to_state, add_line_to_state, remove_element_from_state, remove_line_from_state, update_line_on_state
 
-
+## Text Editor supports 
+# - Typing text using normal characters(letters) and whitespace(space/newline).
+# - Moving the cursor around in the text using the four arrow keys.
+# - Deleting characters(including newlines) using the Backspace key.
+# - Undo(one key-stroke per undo, including arrow keys)
+#   Maintains a history state for undo which tracks all the changes done on the current state
+#   which can later be applied for the undo operation. Similarly, a redo state can also be maintained
+#   which could store all the actions needed for each undo operation.
+# - [TODO] For select function, could maintain one more cursor property to maintain the end of the selection
+#   and then have a clipboard field to store the copy text and paste on either the selection or at the cursor
+##
 class TextEditor:
   def __init__(self, cursor, output_text):
     self.cursor = cursor
@@ -188,6 +198,7 @@ class TextEditor:
     self.cursor[1] = self.cursor[1]+1
     self.state_history["undo"].append(
         lambda state: {**state, "cursor":  [state["cursor"][0], state["cursor"][1]-1], "output_text":  remove_element_from_state(state["output_text"], state["cursor"][0], state["cursor"][1]-1)})
+  
       
 
   

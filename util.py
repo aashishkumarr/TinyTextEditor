@@ -1,3 +1,7 @@
+##
+# Util functions for adding, removing, updating the output state of the state_history object
+##
+
 def remove_element_from_state(output_state:list, index_x: int, index_y: int):
   """
   removes an element at position index_x, index_y in output_state[][]
